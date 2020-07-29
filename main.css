@@ -1,11 +1,221 @@
-body{
-
+html{
+    scroll-behavior: smooth;
 }
+
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Teko', sans-serif;   
+}
+
+
+#navbar{
+    
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+    background-color: rgb(122, 0, 0);
+    border: 1px solid black;
+    position: fixed;
+}
+
+#navbar a{
+    /* margin: 0 2em; */
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+    padding: 11px 2em;
+}
+
+#navbar a:hover{
+    background-color: white;
+    color: black;
+}
+
 
 #welcome-section{
-    height: 1vh;
+    height: 100vh;
+    background: linear-gradient(35deg, rgb(53, 52, 52), #000);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-@media (max-width: 700px){
 
+#welcome-section h1{
+    color: white;
+    font-size: 50px;
+}
+
+#welcome-section h2{
+    margin: 0;
+    font-size: 40px;
+    color: rgb(122, 0, 0);
+}
+
+#projects{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(19, 18, 32);
+}
+
+
+#projects div{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 200px;
+}
+
+#projects div h1{
+    align-self: flex-end;
+    font-size: 50px;
+    color: white;
+}
+
+#projects #tiles-container{
+    display: grid;
+    height: 100%;
+    grid-template-columns: 30% 30% 30%;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "project1 project2 project3"
+                         "project4 project5 project6";
+    gap: 40px;
+}
+
+#projects #tiles-container a{
+    text-decoration: none;
+}
+
+#projects #tiles-container .project-tile{
+    border: 1px solid black;
+    height: 470px;
+    display: flex;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#projects #tiles-container .project-tile div{
+    background-color: #272727;
+    align-self: flex-end;
+    width: 100%;
+    height: 60px;
+    overflow-y: auto;
+}
+#projects #tiles-container .project-tile div p{
+    color: white;
+    font-size: 40px;
+    margin: 0;
+}
+
+#projects #tiles-container #project1{
+    grid-area: project1;
+    background-image: url(images/Tribute.png);
+}
+
+#projects #tiles-container #project2{
+    grid-area: project2;
+    background-image: url(images/Restaurant.png);
+}
+
+#projects #tiles-container #project3{
+    grid-area: project3;
+    background-image: url(images/ProjectLanding);
+}
+
+#projects #tiles-container #project4{
+    grid-area: project4;
+    background-image: url(images/TecDoc.png);
+    background-position: left;
+}
+
+
+#projects #tiles-container #project5{
+    grid-area: project5;
+    background-image: url(images/Cocina.png);
+}
+
+#projects #tiles-container #project4 div p{
+    font-size: 30px;   
+}
+
+
+
+#projects #tiles-container #project6{
+    grid-area: project6;
+    background-image: url(images/Alaska.png);
+}
+
+#projects #button-div{
+    align-items: center;
+}
+
+#projects #button-div button{
+    padding: 5px 20px;
+    font-size: 25px;
+    border: none;
+    background-color: #272727;
+    color: white;
+}
+
+#projects #button-div button:hover{
+    cursor: pointer;
+}
+
+#contact{
+    height: 100vh;
+    background-color: rgb(34, 30, 30);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#contact h1{
+    font-size: 100px;
+    color: white;
+    margin: 0;
+}
+#contact p{
+    font-size: 30px;
+
+}
+
+#contact p a{
+    color: white;
+}
+
+@media (max-width: 900px){
+    #projects #tiles-container #project4 div p{
+        font-size: 25px;   
+    }
+}
+
+
+@media (max-width: 700px){
+    #navbar{
+        flex-direction: column;
+        height: 105px;
+    }
+
+    #navbar a{
+        padding: initial;
+        width: 100%;
+        text-align: center;
+    }
+
+    #projects #tiles-container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #projects #tiles-container .project-tile{
+        margin: 10px;
+    }
 }
